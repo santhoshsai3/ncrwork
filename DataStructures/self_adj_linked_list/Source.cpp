@@ -67,21 +67,22 @@ int main()
 	insertatend(&head, 4);
 	insertatend(&head, 5);
 	display(head);
-	cout << "enter the element";
+	cout << "\n enter the element";
 	cin >> i;
-	while (temp != NULL)
-	{
-		temp1 = temp->next;
-		if (temp1->x == i)
-		{
-			
-			temp->next = temp1->next;
-		}
-	}
+	temp1 = head;
+	
 
-	insert_begin(&head, i);
+	while (temp1->x!=i)
+	{
+		
+		temp1 = temp->next;
+		
+	}
+	cout << endl<<temp->x;
+
+	//insert_begin(&head, i);
 	cout << endl;
-	display(head);
+	//display(head);
 
 	system("pause");
 	return 0;
