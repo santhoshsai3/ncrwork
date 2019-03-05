@@ -72,17 +72,16 @@ int main()
 	temp1 = head;
 	
 
-	while (temp1->x!=i)
+	while (temp1->x!=i&&temp1->next!=NULL)
 	{
-		
-		temp1 = temp->next;
+		temp = temp1;
+		temp1 = temp1->next;
 		
 	}
-	cout << endl<<temp->x;
-
-	//insert_begin(&head, i);
+	temp->next = temp1->next;
 	cout << endl;
-	//display(head);
+	insert_begin(&head, i);
+	display(head);
 
 	system("pause");
 	return 0;
