@@ -7,7 +7,7 @@ void main()
 	int temp;
 	CHAR ansii_Array[] = "SANTHOSH"; 
 	WCHAR wide_Array[] = L"Привет";
-	printf("\nansii: %s", ansii_Array);
+	printf("\n ansii: %s", ansii_Array);
 	printf("\nwide char: %S", wide_Array);
 	TCHAR tc = TEXT('р');
 	printf("\nTchar : %c", tc);

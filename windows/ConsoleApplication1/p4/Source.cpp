@@ -8,7 +8,7 @@ int _tmain(int argc, LPTSTR argv[])
 
 	if (argc != 2)
 	{
-		printf("fileopened in read mode");
+		printf("file not opened in read mode");
 		getchar();
 		return 0;
 	}

@@ -4,7 +4,7 @@
 #include<tchar.h>
 DWORD WINAPI thread_func(LPVOID lparam)
 {
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 1000; i++)
 	{
 		printf("i=(%d)\n", i);
 		Sleep(1000);
