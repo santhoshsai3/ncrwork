@@ -1,29 +1,36 @@
 #include<string>
-#include<ctype.h>
+//#include<ctype.h>
 #include<stdio.h>
 #include<iostream>
 using namespace std;
 int main() {
 	int length;
+	int j = 0;
 	string s;
 	cin >> s;
 	string s1;
 	int flag1 = 0, flag2 = 0;
-	if (s[0] == '-' || s[s.length() - 1] == '-')
+	if (s[0] == '-' )
 	{
-		cout << "invalid";
-		getchar();
-		getchar();
+		cout << "invalid: hiphen is at beginning ";
+		system("pause");
+		return -1;
+	}
+	if(s[s.length() - 1] == '-')
+	{
+		cout << "invalid: hiphen is at end ";
+		system("pause");
 		return -1;
 	}
 	length = s.length();
 		
 	for (int i = 0; i < length; i++) {
-		if (i + 1 < length && s[i + 1] != '-' || i == length - 1) {
-			s1 += s[i];
+		if ((i + 1 < length && s[i + 1] != '-' )|| i == length - 1) {
+			s1[j]= s[i];
+			j++;
 		}
-		else if (i + 1 < s.length() && i + 2 < s.length() && s[i + 1] == '-'&&s[i + 2] == '-') {
-			cout << "invalid";
+		else if ((i + 1 < s.length() && i + 2 < s.length()) && s[i + 1] == '-'&&s[i + 2] == '-') {
+			cout << "invalid: more than 1 hiphen at once";
 			system("pause");
 			return 0;
 
