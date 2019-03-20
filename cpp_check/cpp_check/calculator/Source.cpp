@@ -3,6 +3,50 @@
 #include <iostream>
 #include<math.h>
 using namespace std;
+
+bool isbalanced(string inputstr)
+{
+	stack<char> s_balancing;
+	char ch;
+	for (int i = 0; i < inputstr.length(); i++)
+	{
+		if (inputstr[i] == '(' || inputstr[i] == '{' || inputstr[i] == '[')
+		{
+			s_balancing.push(inputstr[i]);
+			continue;
+		}
+
+
+		switch (inputstr[i])
+		{
+		case ')':
+
+			ch = s_balancing.top();
+			s_balancing.pop();
+			if (ch == '{' || ch == '[')
+				return false;
+			break;
+
+		case '}':
+
+			ch = s_balancing.top();
+			s_balancing.pop();
+			if (ch == '(' || ch == '[')
+				return false;
+			break;
+
+		case ']':
+
+			ch = s_balancing.top();
+			s_balancing.pop();
+			if (ch == '(' || ch == '{')
+				return false;
+			break;
+		}
+	}
+	return (s_balancing.empty());
+}
+
 int precedence(char op) {
 	if (op == '+' || op == '-')
 		return 1;
@@ -135,9 +179,13 @@ double evaluate(string str) {
 }
 
 int main() {
-	string s;
-	cin >> s;
-	cout << evaluate(s);
+	string inputstr;
+	cin >> inputstr;
+	if (!isbalanced(inputstr))
+		cout << "invalid";
+	else
+		cout << evaluate(inputstr);
+
 	system("pause");
 	return 0;
 }
